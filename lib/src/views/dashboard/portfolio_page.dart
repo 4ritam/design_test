@@ -1,8 +1,8 @@
 import 'package:design_test/config/themes.dart';
 import 'package:design_test/src/views/portfolio/project_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class PortfolioPage extends StatefulWidget {
   const PortfolioPage({super.key});
@@ -45,7 +45,7 @@ class _PortfolioPageState extends State<PortfolioPage>
     return TabBarView(
       controller: _tabController,
       children: [
-        ProjectPage(),
+        const ProjectPage(),
         Container(),
         Container(),
         Container(),
@@ -58,9 +58,10 @@ class _PortfolioPageState extends State<PortfolioPage>
       backgroundColor: Colors.white,
       title: Text(
         'Portfolio',
-        style: GoogleFonts.roboto(
+        style: TextStyle(
+          fontFamily: 'Roboto',
           fontWeight: FontWeight.w500,
-          fontSize: 18,
+          fontSize: 18.sp,
           color: Colors.black,
         ),
       ),
@@ -71,11 +72,11 @@ class _PortfolioPageState extends State<PortfolioPage>
           child: GestureDetector(
             onTap: () {},
             child: Padding(
-              padding: const EdgeInsets.only(right: 20),
+              padding: EdgeInsets.only(right: 20.w),
               child: SvgPicture.asset(
                 'assets/svgs/cart_icon.svg',
-                width: 20,
-                height: 20,
+                width: 20.w,
+                height: 20.h,
                 color: primaryColor,
               ),
             ),
@@ -86,11 +87,11 @@ class _PortfolioPageState extends State<PortfolioPage>
           child: GestureDetector(
             onTap: () {},
             child: Padding(
-              padding: const EdgeInsets.only(right: 20),
+              padding: EdgeInsets.only(right: 20.w),
               child: SvgPicture.asset(
                 'assets/svgs/notification_icon.svg',
-                width: 20,
-                height: 20,
+                width: 20.w,
+                height: 20.h,
                 color: primaryColor,
               ),
             ),
@@ -108,16 +109,23 @@ class _PortfolioPageState extends State<PortfolioPage>
       indicatorColor: primaryColor,
       indicatorSize: TabBarIndicatorSize.tab,
       controller: _tabController,
+      onTap: (value) => setState(() {}),
       tabs: tabs
           .map(
             (tab) => Tab(
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.symmetric(
+                  horizontal: 8.w,
+                  vertical: 8.w,
+                ),
                 child: Text(
                   tab,
-                  style: GoogleFonts.roboto(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 14,
+                  style: TextStyle(
+                    fontFamily: 'Roboto',
+                    fontSize: 14.sp,
+                    fontWeight: _tabController.index == tabs.indexOf(tab)
+                        ? FontWeight.w500
+                        : FontWeight.w400,
                     color: Colors.black,
                   ),
                 ),

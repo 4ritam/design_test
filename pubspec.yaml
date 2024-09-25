@@ -9,8 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_screenutil: ^5.9.3
   flutter_svg: ^2.0.10+1
-  google_fonts: ^6.2.1
 
 dev_dependencies:
   flutter_test:
@@ -22,3 +22,19 @@ flutter:
   assets:
     - assets/images/
     - assets/svgs/
+
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/font/Roboto/Roboto-Regular.ttf
+        - asset: assets/font/Roboto/Roboto-Bold.ttf
+        - asset: assets/font/Roboto/Roboto-Italic.ttf
+        - asset: assets/font/Roboto/Roboto-BoldItalic.ttf
+        - asset: assets/font/Roboto/Roboto-Light.ttf
+        - asset: assets/font/Roboto/Roboto-LightItalic.ttf
+        - asset: assets/font/Roboto/Roboto-Medium.ttf
+        - asset: assets/font/Roboto/Roboto-MediumItalic.ttf
+        - asset: assets/font/Roboto/Roboto-Thin.ttf
+        - asset: assets/font/Roboto/Roboto-ThinItalic.ttf
+        - asset: assets/font/Roboto/Roboto-Black.ttf
+        - asset: assets/font/Roboto/Roboto-BlackItalic.ttf

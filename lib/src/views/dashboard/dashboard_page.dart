@@ -1,6 +1,7 @@
 import 'package:design_test/src/views/dashboard/portfolio_page.dart';
 import 'package:design_test/src/views/dashboard/widgets/nav_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -57,20 +58,20 @@ class _DashboardPageState extends State<DashboardPage> {
               ),
             ),
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              height: 60,
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              height: 60.h,
               width: double.infinity,
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20.r),
+                  topRight: Radius.circular(20.r),
                 ),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black.withOpacity(0.1),
-                    blurRadius: 5,
-                    offset: const Offset(0, -5),
+                    blurRadius: 6.r,
+                    offset: Offset(0, -3.h),
                   ),
                 ],
               ),

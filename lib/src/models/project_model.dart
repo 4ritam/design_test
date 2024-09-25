@@ -1,13 +1,13 @@
 class Project {
   final String title;
+  final String language;
   final String author;
-  final String description;
   final String image;
 
   Project({
     required this.title,
+    required this.language,
     required this.author,
-    required this.description,
     required this.image,
   });
 }

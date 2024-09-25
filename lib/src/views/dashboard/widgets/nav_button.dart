@@ -1,5 +1,6 @@
 import 'package:design_test/config/themes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 class NavButton extends StatelessWidget {
@@ -24,24 +25,27 @@ class NavButton extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            height: 2,
-            width: 24,
+            height: 2.h,
+            width: 24.w,
             decoration: BoxDecoration(
               color: isActive ? primaryColor : Colors.transparent,
-              borderRadius: BorderRadius.circular(2),
+              borderRadius: BorderRadius.circular(2.r),
             ),
           ),
-          const SizedBox(height: 8),
+          SizedBox(height: 8.h),
           SvgPicture.asset(
             svg,
             color: isActive ? primaryColor : inactiveColor,
+            height: 24.h,
+            width: 24.w,
           ),
-          const SizedBox(height: 4),
+          SizedBox(height: 4.h),
           Text(
             label,
             style: TextStyle(
+              fontFamily: 'Roboto',
               color: isActive ? primaryColor : inactiveColor,
-              fontSize: 12,
+              fontSize: 12.sp,
               fontWeight: FontWeight.w500,
             ),
           ),

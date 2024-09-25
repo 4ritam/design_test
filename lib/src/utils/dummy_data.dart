@@ -6,8 +6,8 @@ final dummyData = List.generate(
   10,
   (index) => Project(
     title: "Kemampuan Merangkum Tulisan",
-    description: "Oleh Al-Baiqi Samaan",
-    author: "BAHASA SUNDA",
+    author: "Oleh Al-Baiqi Samaan",
+    language: "BAHASA SUNDA",
     image: "assets/images/${Random().nextInt(5) + 1}.jpeg",
   ),
 );

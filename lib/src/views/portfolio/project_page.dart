@@ -1,6 +1,7 @@
 import 'package:design_test/config/themes.dart';
 import 'package:design_test/src/controllers/project_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'widgets/project_card.dart';
@@ -14,7 +15,6 @@ class ProjectPage extends StatefulWidget {
 
 class _ProjectPageState extends State<ProjectPage> {
   final ProjectController _projectController = ProjectController();
-
   final TextEditingController _searchController = TextEditingController();
 
   @override
@@ -29,24 +29,25 @@ class _ProjectPageState extends State<ProjectPage> {
 
   Widget projectList() {
     return ListView(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 16,
-        vertical: 16,
+      padding: EdgeInsets.symmetric(
+        horizontal: 16.h,
+        vertical: 16.w,
       ),
       children: [
         searchField(),
-        const SizedBox(height: 16),
+        SizedBox(height: 16.h),
         ..._searchController.text.isEmpty
             ? _projectController.getProjects().map(
                   (project) => ProjectCard(project: project),
                 )
             : _projectController.searchProjects(_searchController.text).isEmpty
                 ? [
-                    const Center(
+                    Center(
                       child: Text(
                         'No project found',
                         style: TextStyle(
-                          fontSize: 16,
+                          fontFamily: 'Roboto',
+                          fontSize: 16.sp,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -70,39 +71,46 @@ class _ProjectPageState extends State<ProjectPage> {
       },
       decoration: InputDecoration(
         hintText: 'Search a project',
-        hintStyle: const TextStyle(
-          fontSize: 14,
+        hintStyle: TextStyle(
+          fontFamily: 'Roboto',
+          fontSize: 14.sp,
           fontWeight: FontWeight.w400,
-          color: Color(0xFF9E95A2),
+          color: lightForeground,
         ),
-        contentPadding: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 12,
+        contentPadding: EdgeInsets.symmetric(
+          horizontal: 16.h,
+          vertical: 14.w,
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(12.r),
           borderSide: const BorderSide(
             color: Colors.black,
           ),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(color: Color(0xFFE5E5E5)),
+          borderRadius: BorderRadius.circular(12.r),
+          borderSide: const BorderSide(color: borderColor),
         ),
         filled: true,
         fillColor: Colors.white,
         suffixIcon: Container(
-          margin: const EdgeInsets.all(8),
+          margin: EdgeInsets.symmetric(
+            horizontal: 8.w,
+            vertical: 8.w,
+          ),
           decoration: BoxDecoration(
             color: primaryColor,
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(12.r),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(8),
+            padding: EdgeInsets.symmetric(
+              horizontal: 8.w,
+              vertical: 8.w,
+            ),
             child: SvgPicture.asset(
               'assets/svgs/search_icon.svg',
-              width: 10,
-              height: 10,
+              width: 10.w,
+              height: 10.r,
               color: Colors.white,
             ),
           ),
@@ -141,10 +149,11 @@ class _ProjectPageState extends State<ProjectPage> {
                   color: Colors.white,
                 ),
                 const SizedBox(width: 8),
-                const Text(
+                Text(
                   'Filter',
                   style: TextStyle(
-                    fontSize: 14,
+                    fontFamily: 'Roboto',
+                    fontSize: 14.sp,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
