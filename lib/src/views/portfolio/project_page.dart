@@ -78,8 +78,8 @@ class _ProjectPageState extends State<ProjectPage> {
           color: lightForeground,
         ),
         contentPadding: EdgeInsets.symmetric(
-          horizontal: 16.h,
-          vertical: 14.w,
+          horizontal: 16.7.w,
+          vertical: 14.h,
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12.r),
